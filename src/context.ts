@@ -551,6 +551,11 @@ export class Context<U extends Deunionize<tg.Update> = tg.Update> {
     return this.telegram.setChatPermissions(this.chat.id, ...args)
   }
 
+  getChatMembers(...args: Shorthand<'getChatMembers'>) {
+    this.assert(this.chat, 'getChatMembers')
+    return this.telegram.getChatMembers(this.chat.id, ...args)
+  }
+
   /**
    * @see https://core.telegram.org/bots/api#getchatadministrators
    */
