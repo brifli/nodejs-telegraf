@@ -520,6 +520,13 @@ export class Telegram extends ApiClient {
   /**
    * @param chatId Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)
    */
+  getChatMembers(chatId: number | string) {
+    return this.callApi('getChatMembers', { chat_id: chatId })
+  }
+
+  /**
+   * @param chatId Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)
+   */
   getChatAdministrators(chatId: number | string) {
     return this.callApi('getChatAdministrators', { chat_id: chatId })
   }
